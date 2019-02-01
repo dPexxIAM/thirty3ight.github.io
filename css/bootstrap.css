@@ -59,7 +59,7 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 }
 
 .card-footer{
-position:absolute;
+  position:absolute;
   bottom:0;
   width:100%;
 }
@@ -67,10 +67,11 @@ position:absolute;
   padding-bottom:65px;
   background: #1F2833;
   border-color: #fff;
+  border-width: 0.2rem;
   color: #C5C6C7;
   }
  .featurette-divider {
-  margin: 80px 0; /* <hr> between each */
+  margin: 80px 0;  
   background: #1F2833;
 }
 

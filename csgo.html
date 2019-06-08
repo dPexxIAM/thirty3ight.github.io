@@ -9,6 +9,25 @@ video {
 object-fit: fill;
 }
 
+.collapsible {
+  border: none;
+  background-color: inherit;
+  font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 300;
+  color: inherit;
+}
+
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  /*background-color: #f1f1f1;*/
+}
+
+}
 
 </style>
     <!-- Bootstrap CSS -->
@@ -218,10 +237,40 @@ object-fit: fill;
     <div class="col-md-7">
       <h2 class="featurette-heading">Commands, Colours, and Join Message</h2>
       <p class="lead">Special VIP commans like Vote Extend and more.</p>
-	  <p>To see the list of available commands click <a href="commands.html" target="_blank">here</a></p>
+	 <!--  <p>To see the list of available commands click <a href="commands.html" target="_blank">here</a></p> -->
+     
+
 	  <p class="lead">Changeable title</p>
 	  <p class="lead">Change the colour of your title, name, and chat to your liking</p>
 	  <p class="lead">Set a custom join message to display whenever you join a server</p>
+    <button class="collapsible">To see the list of available commands click here</button>
+<div class="content">
+  <p><ul>
+<b><li>!triggers - Allows a client to see the triggers the map maker has made on the map. (This is great for learning skips/new routes)</li><br/>
+
+<li>!replay - Allows a client to generate a replay for either the map, a stage, or a bonus at anytime! Also replay and view style bots!</li><br/>
+
+<li>!mytitle/!title - Displays a menu that shows your custom title and allows you to change text colour and name colour in the chat.</li><br/>
+
+<li>!customtitle - Allows you to set a custom title. The command is best used through console to allow for custom colour variations <br/> Ex. sm_customtitle "{red}[Hello]"</li><br/>
+
+<li>!ve - Votes to extend the current map for 10 minutes</li><br/>
+
+<li>!colours - Lists available colours for your custom title and join message</li><br/>
+
+<li>!toggletitle - Toggles your custom title on/off</li><br/>
+
+<li>!joinmsg - Allows a vip to set their join message <br/> Ex. sm_joinmsg "{red}[Hello]"</li><br/>
+
+<li>!votemute - Initiates a server-wide vote to mute a selected players for 30 minutes</li><br/>
+
+<li>!votegag - Initiates a server-wide vote to gag a selected players for 30 minutes</li><br/>
+
+<li>Syntax examples for custom title and custom join message:<br/>
+sm_customtitle "{red}[Hello]"<br/>
+sm_joinmsg "{red}[Hello]"</li></b>
+</ul></p>
+</div>
     </div>
     <div class="col-md-5">
       <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="500x500" src="./images/ft5.png" data-holder-rendered="true" style="width: 500px; height: 500px;">
@@ -234,7 +283,22 @@ object-fit: fill;
 
 
 
+<script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
 
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>
 
 
 
